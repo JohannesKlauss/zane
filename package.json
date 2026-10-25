@@ -8,6 +8,7 @@
     "dev": "zane/node_modules/.bin/vp run website#dev"
   },
   "devDependencies": {
+    "@oxlint/plugins": "catalog:",
     "vite-plus": "catalog:"
   },
   "devEngines": {

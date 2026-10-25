@@ -1,0 +1,14 @@
+{
+  "name": "domain",
+  "version": "0.0.0",
+  "description": "The core zane domain",
+  "type": "module",
+  "scripts": {
+    "test": "vp test"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:",
+    "typescript": "catalog:",
+    "vite-plus": "catalog:"
+  }
+}
