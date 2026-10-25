@@ -1,0 +1,58 @@
+{
+  "name": "zane-desktop",
+  "productName": "zane-desktop",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Deterministic agent workflows",
+  "keywords": [],
+  "license": "MIT",
+  "author": {
+    "name": "Johannes Klauss",
+    "email": "klauss.johannes@gmail.com"
+  },
+  "main": ".vite/build/main.js",
+  "scripts": {
+    "dev": "electron-forge start",
+    "package": "vp build && electron-forge package",
+    "build": "vp build && electron-forge make",
+    "release": "electron-forge release",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@chromatic-com/storybook": "latest",
+    "@electron-forge/cli": "^8.0.1",
+    "@electron-forge/maker-deb": "^8.0.1",
+    "@electron-forge/maker-rpm": "^8.0.1",
+    "@electron-forge/maker-squirrel": "^8.0.1",
+    "@electron-forge/maker-zip": "^8.0.1",
+    "@electron-forge/plugin-auto-unpack-natives": "^8.0.1",
+    "@electron-forge/plugin-fuses": "^8.0.1",
+    "@electron-forge/plugin-vite": "^8.0.1",
+    "@electron/fuses": "^2.1.3",
+    "@storybook/addon-a11y": "^10.6.3",
+    "@storybook/addon-docs": "^10.6.3",
+    "@storybook/addon-svelte-csf": "latest",
+    "@storybook/addon-vitest": "^10.6.3",
+    "@storybook/sveltekit": "^10.6.3",
+    "@sveltejs/adapter-static": "^4.0.0",
+    "@sveltejs/kit": "^3.0.0",
+    "@sveltejs/vite-plugin-svelte": "^7.2.0",
+    "@tailwindcss/vite": "^4.3.0",
+    "@types/electron-squirrel-startup": "^1.0.2",
+    "@types/node": "^24",
+    "@vitest/browser-playwright": "latest",
+    "@vitest/coverage-v8": "latest",
+    "electron": "45.0.0",
+    "playwright": "latest",
+    "storybook": "^10.6.3",
+    "svelte": "^5.57.1",
+    "svelte-check": "^4.6.0",
+    "tailwindcss": "^4.3.0",
+    "typescript": "catalog:",
+    "vite-plus": "catalog:"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.1"
+  }
+}
