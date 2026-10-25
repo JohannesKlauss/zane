@@ -1,4 +1,5 @@
-import { defineConfig } from "vite-plus";
+import oxlintByethrowPlugin from "@praha/byethrow-oxlint"
+import { defineConfig } from "vite-plus"
 
 const ignorePatterns = [
   ".agent/**",
@@ -13,16 +14,23 @@ const ignorePatterns = [
   ".roo/**",
   ".windsurf/**",
   "tools/oxlint/anti-slop/**",
-];
+  "apps/desktop/src/lib/components/**",
+]
 
 export default defineConfig({
-  fmt: { ignorePatterns },
+  fmt: {
+    ignorePatterns,
+    semi: false,
+    sortImports: true,
+    sortTailwindcss: true,
+  },
   lint: {
     ignorePatterns,
     jsPlugins: [
       { name: "vite-plus", specifier: "vite-plus/oxlint-plugin" },
       { name: "anti-slop", specifier: "./tools/oxlint/anti-slop/index.ts" },
     ],
+    extends: [oxlintByethrowPlugin.recommended],
     rules: {
       "vite-plus/prefer-vite-plus-imports": "error",
       "oxc/no-accumulating-spread": "error",
@@ -44,10 +52,12 @@ export default defineConfig({
       "anti-slop/no-widen-then-assert": "error",
       "anti-slop/require-readable-spacing": "error",
       "anti-slop/require-safety-comment-for-type-assertion": "error",
+      curly: "error",
+      "byethrow/consistent-namespace": ["error", "R"],
     },
     options: { typeAware: true, typeCheck: true },
   },
   run: {
     cache: true,
   },
-});
+})

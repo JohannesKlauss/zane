@@ -1,9 +1,7 @@
 {
   "name": "zane-desktop",
-  "productName": "zane-desktop",
   "version": "0.1.0",
   "private": true,
-  "type": "module",
   "description": "Deterministic agent workflows",
   "keywords": [],
   "license": "MIT",
@@ -11,13 +9,21 @@
     "name": "Johannes Klauss",
     "email": "klauss.johannes@gmail.com"
   },
+  "type": "module",
   "main": ".vite/build/main.js",
+  "imports": {
+    "#lib": "./src/lib/index.ts",
+    "#lib/*": "./src/lib/*"
+  },
   "scripts": {
     "dev": "electron-forge start",
     "package": "vp build && electron-forge package",
     "build": "vp build && electron-forge make",
     "release": "electron-forge release",
     "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.1"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "latest",
@@ -58,11 +64,5 @@
     "typescript": "catalog:",
     "vite-plus": "catalog:"
   },
-  "dependencies": {
-    "electron-squirrel-startup": "^1.0.1"
-  },
-  "imports": {
-    "#lib": "./src/lib/index.ts",
-    "#lib/*": "./src/lib/*"
-  }
+  "productName": "zane-desktop"
 }

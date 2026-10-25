@@ -4,11 +4,15 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "ready": "zane/node_modules/.bin/vp check && vp run -r test && vp run -r build",
-    "dev": "zane/node_modules/.bin/vp run website#dev"
+    "ready": "vp check && vp run -r test && vp run -r build",
+    "test": "vp test",
+    "fmt": "vp fmt",
+    "check": "vp check",
+    "check:fix": "vp fmt && vp check --fix"
   },
   "devDependencies": {
     "@oxlint/plugins": "catalog:",
+    "@praha/byethrow-oxlint": "0.12.0",
     "vite-plus": "catalog:"
   },
   "devEngines": {
@@ -19,6 +23,6 @@
     }
   },
   "engines": {
-    "node": ">=22.18.0"
+    "node": ">=26.0.0"
   }
 }
