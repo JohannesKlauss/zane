@@ -20,7 +20,7 @@
     "package": "vp build && electron-forge package",
     "build": "vp build && electron-forge make",
     "release": "electron-forge release",
-    "test": "vp test --run",
+    "test": "vp run test:run",
     "storybook": "storybook dev -p 6006",
     "storybook:build": "storybook build",
     "typecheck": "svelte-check --tsconfig ./tsconfig.json"

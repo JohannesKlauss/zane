@@ -17,6 +17,27 @@ export default defineConfig({
       }),
     }),
   ],
+  run: {
+    tasks: {
+      "test:run": {
+        command: "vp test --run",
+        cache: {
+          input: [
+            { auto: true },
+            "!node_modules/.cache/storybook/**",
+            "!.svelte-kit/**",
+            "!node_modules/$app/**",
+          ],
+          output: [
+            { auto: true },
+            "!node_modules/.cache/storybook/**",
+            "!.svelte-kit/**",
+            "!node_modules/$app/**",
+          ],
+        },
+      },
+    },
+  },
   test: {
     projects: [
       {

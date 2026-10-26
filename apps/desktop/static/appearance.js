@@ -43,8 +43,7 @@ if (!window.zaneAppearance) {
         } else {
           localStorage.setItem(storageKey, preference)
         }
-      } catch {
-      }
+      } catch {}
 
       apply()
     },
