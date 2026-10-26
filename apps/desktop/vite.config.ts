@@ -17,6 +17,9 @@ export default defineConfig({
       }),
     }),
   ],
+  optimizeDeps: {
+    include: ["@lucide/svelte", "bits-ui", "cn", "paneforge", "tailwind-variants"],
+  },
   run: {
     tasks: {
       "test:run": {
@@ -45,7 +48,7 @@ export default defineConfig({
         test: {
           name: "unit",
           environment: "node",
-          include: ["src/**/*.test.ts"],
+          include: ["src/**/*.test.ts", "src/**/*.build-test.ts"],
         },
       },
       {

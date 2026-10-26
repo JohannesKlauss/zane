@@ -24,7 +24,7 @@ Complete when the operation and target path are established and pre-existing wor
    node <skill-directory>/scripts/install.mjs
    ```
 
-   This creates `tools/oxlint/anti-slop/`. Pass another relative destination as the first argument when the repository has an established tooling layout. The script refuses to replace an existing destination; route existing copies through the update procedure rather than `--force`.
+   This creates `../../../tools/oxlint/anti-slop`. Pass another relative destination as the first argument when the repository has an established tooling layout. The script refuses to replace an existing destination; route existing copies through the update procedure rather than `--force`.
 
    Preserve the nested `vendor/eslint-stylistic/LICENSE` and `UPSTREAM.md`; they travel with the copied rule. Readability enforcement is self-contained and requires no Stylistic plugin dependency.
 

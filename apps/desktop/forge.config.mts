@@ -7,11 +7,18 @@ import { VitePlugin } from "@electron-forge/plugin-vite"
 import type { ForgeConfig } from "@electron-forge/shared-types"
 import { FuseV1Options, FuseVersion } from "@electron/fuses"
 
+import { packageRenderer } from "./electron/package-renderer.ts"
+
 const config: ForgeConfig = {
   packagerConfig: {
     asar: true,
   },
   rebuildConfig: {},
+  hooks: {
+    packageAfterCopy: async (_config, buildPath) => {
+      await packageRenderer(buildPath)
+    },
+  },
   makers: [new MakerSquirrel({}), new MakerZIP({}, ["darwin"]), new MakerRpm({}), new MakerDeb({})],
   plugins: [
     new VitePlugin({
