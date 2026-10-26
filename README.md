@@ -1,6 +1,17 @@
-# Vite+ Monorepo Starter
+# Zane
 
-A starter for creating a Vite+ monorepo.
+A desktop surface for Pi conversations and deterministic task machines.
+Threads are chats. Runs are processes.
+
+The desktop and theme foundation is in place. Workflow orchestration and tracker
+integrations are planned, not shipped capabilities.
+
+- [Product and architecture design](docs/design.md) records agreed product
+  decisions, proposed technical approaches, and open questions.
+- [Design-token foundation](apps/desktop/docs/design-tokens.md) documents the
+  Midnight dark and Supaterm light appearances.
+- [Tech Stack & Patterns](https://github.com/JohannesKlauss/zane/issues/1) tracks
+  implementation choices.
 
 ## Development
 
