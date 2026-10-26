@@ -14,10 +14,6 @@ Ported from `supabitapp/supaterm` at
 - [Semantic mapping](https://github.com/supabitapp/supaterm/blob/5a05f44ec3f960716139f9723ceab6995b3c0b50/apps/web/src/index.css#L1077-L1158)
 - [Geometry, fonts, and composer elevation](https://github.com/supabitapp/supaterm/blob/5a05f44ec3f960716139f9723ceab6995b3c0b50/apps/web/src/index.css#L79-L188)
 
-The complete upstream MIT notice is retained in
-[`static/licenses/supaterm.txt`](../static/licenses/supaterm.txt). Keeping it in static
-assets also includes it in the packaged renderer and built Storybook.
-
 ## Mapping decisions
 
 Raw OKLCH values are retained without RGB conversion. Dark is **Midnight**, not
