@@ -1,5 +1,7 @@
 {
+  "extends": "$app/tsconfig",
   "compilerOptions": {
+    "types": ["$app/types", "vite-plus/client", "node"],
     "target": "ESNext",
     "module": "preserve",
     "moduleResolution": "bundler",
@@ -10,5 +12,5 @@
     "sourceMap": true,
     "resolveJsonModule": true
   },
-  "include": ["src/**/*", "*.ts", "*.mts"]
+  "include": ["src/**/*", ".storybook/**/*", "static/appearance.js", "*.ts", "*.mts"]
 }

@@ -189,9 +189,6 @@ settings:
 
 catalogs:
   default:
-    '@fontsource-variable/nunito-sans':
-      specifier: ^5.3.0
-      version: 5.3.0
     '@lucide/svelte':
       specifier: ^1.61.0
       version: 1.61.0
@@ -273,9 +270,6 @@ importers:
       '@electron/fuses':
         specifier: ^2.1.3
         version: 2.1.3
-      '@fontsource-variable/nunito-sans':
-        specifier: 'catalog:'
-        version: 5.3.0
       '@lucide/svelte':
         specifier: 'catalog:'
         version: 1.61.0(svelte@5.57.2)
@@ -710,9 +704,6 @@ packages:
     engines: {node: '>=18'}
     cpu: [x64]
     os: [win32]
-
-  '@fontsource-variable/nunito-sans@5.3.0':
-    resolution: {integrity: sha512-Vk1PSfckNDwgw2yGcsvJP3o/0zEW8Rp6KzbD8Ql/6iRHQshnhhAjt+cSIfAUyp5vQuSlleGHFW2LfYaaex0diw==}
 
   '@isaacs/fs-minipass@4.0.1':
     resolution: {integrity: sha512-wgm9Ehl2jpeqP3zw/7mo3kRHFp5MEDhqAdwy1fTGkHAwnkGOVsgpvQhL8B5n1qlb01jV3n/bI0ZfZp5lWA1k4w==}
@@ -3683,8 +3674,6 @@ snapshots:
 
   '@esbuild/win32-x64@0.28.2':
     optional: true
-
-  '@fontsource-variable/nunito-sans@5.3.0': {}
 
   '@isaacs/fs-minipass@4.0.1':
     dependencies:
