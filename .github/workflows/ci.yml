@@ -1,0 +1,51 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: voidzero-dev/setup-vp@v1.21.2
+        with:
+          node-version: "26"
+          cache: true
+
+      - run: vp install --frozen-lockfile
+
+      - name: Cache Vite+ tasks
+        uses: actions/cache@v6
+        with:
+          path: node_modules/.vite/task-cache
+          key: vite-task-${{ runner.os }}-${{ runner.arch }}-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            vite-task-${{ runner.os }}-${{ runner.arch }}-
+
+      - name: Sync SvelteKit types
+        run: vp exec --filter zane-desktop svelte-kit sync
+
+      - name: Check
+        run: vp run check
+
+      - name: Typecheck
+        run: vp run -r typecheck
+
+      - name: Install Chromium for Storybook component tests
+        run: vp exec --filter zane-desktop playwright install --with-deps chromium
+
+      - name: Test
+        run: vp run -r test

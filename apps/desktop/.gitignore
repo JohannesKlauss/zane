@@ -137,6 +137,8 @@ dist
 !.yarn/sdks
 !.yarn/versions
 
+storybook-static/
+
 # Vite files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
