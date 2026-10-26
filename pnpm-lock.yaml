@@ -189,6 +189,9 @@ settings:
 
 catalogs:
   default:
+    '@fixture-gen/vitest':
+      specifier: 0.1.0
+      version: 0.1.0
     '@internationalized/date':
       specifier: ^3.12.4
       version: 3.12.4
@@ -198,6 +201,15 @@ catalogs:
     '@oxlint/plugins':
       specifier: 1.88.0
       version: 1.88.0
+    '@praha/byethrow':
+      specifier: 0.12.0
+      version: 0.12.0
+    '@praha/byethrow-testing':
+      specifier: 0.12.0
+      version: 0.12.0
+    '@praha/error-factory':
+      specifier: 1.4.1
+      version: 1.4.1
     '@types/node':
       specifier: ^26
       version: 26.6.5
@@ -207,6 +219,9 @@ catalogs:
     cn:
       specifier: ^0.5.0
       version: 0.5.0
+    fixture-gen:
+      specifier: 1.4.1
+      version: 1.4.1
     paneforge:
       specifier: ^1.0.2
       version: 1.0.2
@@ -222,6 +237,9 @@ catalogs:
     typescript:
       specifier: 6.0.3
       version: 6.0.3
+    valibot:
+      specifier: 1.5.0
+      version: 1.5.0
     vite-plus:
       specifier: 1.3.0
       version: 1.3.0
@@ -368,10 +386,29 @@ importers:
         version: 1.3.0(@types/node@24.19.2)(@vitest/browser-playwright@5.0.5)(@vitest/coverage-v8@5.0.5)(@vitest/ui@5.0.5)(esbuild@0.28.2)(jiti@2.7.0)(playwright@1.64.1)(svelte@5.57.2)(typescript@6.0.3)(yaml@2.9.1)
 
   packages/domain:
+    dependencies:
+      '@praha/byethrow':
+        specifier: 'catalog:'
+        version: 0.12.0(typescript@6.0.3)
+      '@praha/error-factory':
+        specifier: 'catalog:'
+        version: 1.4.1
+      valibot:
+        specifier: 'catalog:'
+        version: 1.5.0(typescript@6.0.3)
     devDependencies:
+      '@fixture-gen/vitest':
+        specifier: 'catalog:'
+        version: 0.1.0(vitest@5.0.5)
+      '@praha/byethrow-testing':
+        specifier: 'catalog:'
+        version: 0.12.0(@praha/byethrow@0.12.0(typescript@6.0.3))
       '@types/node':
         specifier: 'catalog:'
         version: 26.6.5
+      fixture-gen:
+        specifier: 'catalog:'
+        version: 1.4.1
       typescript:
         specifier: 'catalog:'
         version: 6.0.3
@@ -722,6 +759,12 @@ packages:
     engines: {node: '>=18'}
     cpu: [x64]
     os: [win32]
+
+  '@fixture-gen/vitest@0.1.0':
+    resolution: {integrity: sha512-20+yuXVK2BdhbXGQ6tiTCJkp9E8U5SHOuY3BRBNpzX0zkpO7n4KW9lP8tBb+I2B0WNDAWNj4YaHlzqVW6XmWQQ==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      vitest: '>=1.0.0'
 
   '@floating-ui/core@1.8.0':
     resolution: {integrity: sha512-0CIZ5itps/8x7BG8dEIhs53BvCUH2PCoogtakwRTut+Arm58sJooJ0AuZhLw2HJYIR5cMLNPBSS728sPho2khQ==}
@@ -1311,10 +1354,18 @@ packages:
       '@praha/byethrow': 0.12.0
       oxlint: ^1.0.0
 
+  '@praha/byethrow-testing@0.12.0':
+    resolution: {integrity: sha512-DyohuFuOVFyks0eCZnWIZzpKmei4iPxBqfPJGRPtM+32xJe++112xSN5KO3CsfZO7GcfISMlVSjVUuSQFWs+GA==}
+    peerDependencies:
+      '@praha/byethrow': 0.12.0
+
   '@praha/byethrow@0.12.0':
     resolution: {integrity: sha512-Q3dRHW8aGqYbEe/W5YKrik6GbtfLGdCrCVcDcP/YJe4uhhbbrkEw9XoRuPZhfMb4uLrUXk27h4phK3I8+cAdRw==}
     peerDependencies:
       typescript: '>=5.0.0'
+
+  '@praha/error-factory@1.4.1':
+    resolution: {integrity: sha512-HA+y+xwmQIl9EPvZonRk1/hsSAvAlpDjlpruyW8kTAQ++Oq5Fi7hFV0Y84TLHXJ6SciYHlKGqrekrS5wzkD5+Q==}
 
   '@rolldown/pluginutils@1.0.1':
     resolution: {integrity: sha512-2j9bGt5Jh8hj+vPtgzPtl72j0yRxHAyumoo6TNfAjsLB04UtpSvPbPcDcBMxz7n+9CYB0c1GxQFxYRg2jimqGw==}
@@ -2273,6 +2324,11 @@ packages:
     resolution: {integrity: sha512-vqIlNogKeyD3yzrm0yhRMQg8hOVwYcYRfjEoODd49iCprMn4HL85gK3HcykQE53EPIpX3HcAbGA5ELQv216dAQ==}
     engines: {node: '>=16'}
 
+  fixture-gen@1.4.1:
+    resolution: {integrity: sha512-IasMJSIQxToRLJKDVK+3a3glUDCMppughvWYTSXjBC2kCwQVffD4qARsSwmtI/Ol2D3NcMW87gGWhBxINdB/EQ==}
+    engines: {node: '>=18'}
+    hasBin: true
+
   flatted@3.4.4:
     resolution: {integrity: sha512-5+ybhBZANEJxaH3X5evAFatUxLfEHSr7n6kYJ+1Qd0mUqr4eu9gIf6GDbWHf8RJijHrjjO8G+la14SlL2SeS1Q==}
 
@@ -3175,6 +3231,14 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
+  valibot@1.5.0:
+    resolution: {integrity: sha512-nil6AkP2TChWL43Z5uJ6GTxX01CUA+g8LWUM+N/rB9NBbkUMaUsi9PUNzlUPgoKASgmx9f7eGOYpJ04/fSa6FQ==}
+    peerDependencies:
+      typescript: '>=5'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+
   vite-plus@1.3.0:
     resolution: {integrity: sha512-wZGsDeYfPcrCegqgY68pJJHGTpEZdsZvIMH2/mWXkGkBD72UY3M7z24Sv3ZeOL/FrqbbtyqBOfkKO6BvoQ8wMw==}
     engines: {node: ^22.18.0 || ^24.11.0 || >=26.0.0}
@@ -3760,6 +3824,11 @@ snapshots:
   '@esbuild/win32-x64@0.28.2':
     optional: true
 
+  '@fixture-gen/vitest@0.1.0(vitest@5.0.5)':
+    dependencies:
+      fixture-gen: 1.4.1
+      vitest: 5.0.5(@types/node@26.6.5)(@vitest/browser-playwright@5.0.5)(@vitest/browser-preview@5.0.5)(@vitest/coverage-v8@5.0.5)(@vitest/ui@5.0.5)(@voidzero-dev/vite-plus-core@1.3.0(@types/node@26.6.5)(esbuild@0.28.2)(jiti@2.7.0)(typescript@6.0.3)(yaml@2.9.1))
+
   '@floating-ui/core@1.8.0':
     dependencies:
       '@floating-ui/utils': 0.2.12
@@ -4106,10 +4175,16 @@ snapshots:
       '@praha/byethrow': 0.12.0(typescript@6.0.3)
       oxlint: 1.88.0(oxlint-tsgolint@7.0.2004)(vite-plus@1.3.0(@types/node@26.6.5)(@vitest/browser-playwright@5.0.5)(@vitest/coverage-v8@5.0.5)(@vitest/ui@5.0.5)(esbuild@0.28.2)(jiti@2.7.0)(playwright@1.64.1)(svelte@5.57.2)(typescript@6.0.3)(yaml@2.9.1))
 
+  '@praha/byethrow-testing@0.12.0(@praha/byethrow@0.12.0(typescript@6.0.3))':
+    dependencies:
+      '@praha/byethrow': 0.12.0(typescript@6.0.3)
+
   '@praha/byethrow@0.12.0(typescript@6.0.3)':
     dependencies:
       '@standard-schema/spec': 1.1.0
       typescript: 6.0.3
+
+  '@praha/error-factory@1.4.1': {}
 
   '@rolldown/pluginutils@1.0.1': {}
 
@@ -5062,6 +5137,8 @@ snapshots:
   filenamify@6.0.0:
     dependencies:
       filename-reserved-regex: 3.0.0
+
+  fixture-gen@1.4.1: {}
 
   flatted@3.4.4: {}
 
@@ -6028,6 +6105,10 @@ snapshots:
   use-sync-external-store@1.7.0(react@19.3.1):
     dependencies:
       react: 19.3.1
+
+  valibot@1.5.0(typescript@6.0.3):
+    optionalDependencies:
+      typescript: 6.0.3
 
   vite-plus@1.3.0(@types/node@24.19.2)(@vitest/browser-playwright@5.0.5)(@vitest/coverage-v8@5.0.5)(@vitest/ui@5.0.5)(esbuild@0.28.2)(jiti@2.7.0)(playwright@1.64.1)(svelte@5.57.2)(typescript@6.0.3)(yaml@2.9.1):
     dependencies:

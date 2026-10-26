@@ -6,8 +6,16 @@
   "scripts": {
     "test": "vp test"
   },
+  "dependencies": {
+    "@praha/byethrow": "catalog:",
+    "@praha/error-factory": "catalog:",
+    "valibot": "catalog:"
+  },
   "devDependencies": {
+    "@fixture-gen/vitest": "catalog:",
+    "@praha/byethrow-testing": "catalog:",
     "@types/node": "catalog:",
+    "fixture-gen": "catalog:",
     "typescript": "catalog:",
     "vite-plus": "catalog:"
   }
