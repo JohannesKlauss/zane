@@ -13,4 +13,23 @@ export default defineConfig({
     },
     exports: true,
   },
+  test: {
+    projects: [
+      {
+        test: {
+          name: "domain:unit",
+          include: ["src/**/*.test.ts"],
+          exclude: ["src/**/*.integration.test.ts"],
+          setupFiles: ["./vitest.setup.ts"],
+        },
+      },
+      {
+        test: {
+          name: "domain:integration",
+          include: ["src/**/*.integration.test.ts"],
+          setupFiles: ["./vitest.setup.ts"],
+        },
+      },
+    ],
+  },
 })
