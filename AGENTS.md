@@ -59,7 +59,7 @@
 ### DI
 
 - We use dependency injection in this project to satisfy inversion of control
-- DI happens through partial application, using the `hasDependency` function
+- DI happens through partial application, using the `hasDependencies` function
 - Functions that require dependencies are defined in `packages/domain`
 - Function that depend on other dependent functions declare the applied version as a dependency themselves.
 - Side Effects are generally defined by using `hasDependency` and declaring the function that perform that side effect as a dependency
@@ -84,3 +84,17 @@
 ## General
 
 - We don't write comments in the code
+
+## Agent skills
+
+### Issue tracker
+
+Issues and specs live as GitHub issues in this repo, managed via the `gh` CLI. See `docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+Triage uses the five canonical labels: `needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, `wontfix`. See `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+Single-context: one `GLOSSARY.md` + `docs/adr/` at the repo root, created lazily. See `docs/agents/domain.md`.

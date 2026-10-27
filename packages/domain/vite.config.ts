@@ -28,7 +28,6 @@ export default defineConfig({
           name: "domain:integration",
           include: ["src/**/*.integration.test.ts"],
           setupFiles: ["./vitest.setup.ts"],
-          globalSetup: ["@epaper/persistence/testing/global-setup"],
         },
       },
     ],
