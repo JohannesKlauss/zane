@@ -1,3 +1,5 @@
+All ticket related work is done in Github via `gh`.
+
 ## Testing
 
 - We do not mock database calls when we can provide a real database in isolation, especially in workflows and adapters
