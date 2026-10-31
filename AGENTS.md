@@ -86,6 +86,7 @@ All ticket related work is done in Github via `gh`.
 ## General
 
 - We don't write comments in the code
+- Take the UI/UX directly from Supaterm / Paseo. No need to reinvent the wheel. It should look and feel exactly the same.
 
 ## Agent skills
 
